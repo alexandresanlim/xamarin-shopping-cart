@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinUI.AddToShoppingCard.App">
+    
+    <Application.Resources>
+        <Color x:Key="primary">#F44336</Color>
+        <Color x:Key="primary_dark">#D32F2F</Color>
+        <Color x:Key="primary_light">#FFCDD2</Color>
+        <Color x:Key="accent">#f1c40f</Color>
+        <Color x:Key="primary_text">#212121</Color>
+        <Color x:Key="secondary_text">#757575</Color>
+        <Color x:Key="icons">#FFFFFF</Color>
+        <Color x:Key="divider">#30BDBDBD</Color>
+        <Color x:Key="background_page">#ecf0f1</Color>
+
+        <OnPlatform x:Key="FontAwesomeFontFamily" x:TypeArguments="x:String">
+            <On Platform="iOS" Value="Font Awesome 5 Free" />
+            <On Platform="Android" Value="fa-solid-900.ttf#Font Awesome 5 Free" />
+            <On Platform="UWP" Value="Assets/Fonts/fa-solid-900.ttf#Font Awesome 5 Free" />
+        </OnPlatform>
+
+        <Style TargetType="Grid">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal" />
+                        <VisualState x:Name="Selected">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor"
+                                        Value="{StaticResource accent}" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+
+
+    </Application.Resources>
+</Application>
