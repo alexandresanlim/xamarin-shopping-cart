@@ -2,49 +2,131 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:pancakeview="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:pancakeview="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:local="clr-namespace:XamarinUI.AddToShoppingCard"
              mc:Ignorable="d"
-             x:Class="XamarinUI.AddToShoppingCard.CheckOutPage">
+             x:Class="XamarinUI.AddToShoppingCard.CheckOutPage"
+             Title="Place Order"
+             >
+
+    <ContentPage.BindingContext>
+        <local:CheckOutViewModel />
+    </ContentPage.BindingContext>
+
     <ContentPage.Content>
-        <StackLayout Padding="10" BackgroundColor="{StaticResource primary}">
-            <Label Text="Info" Margin="25,0,0,0" TextColor="{StaticResource icons}" FontSize="Medium" FontAttributes="Bold"/>
-            <pancakeview:PancakeView BackgroundColor="#20FFFFFF" Padding="30,15" CornerRadius="50,0,50,50">
-                <StackLayout>
-                    <Label Text="Ludwing Von Mises" TextColor="{StaticResource icons}"/>
-                    <Label Text="(99) 9999-9999" TextColor="{StaticResource icons}"/>
+
+        <Grid RowSpacing="0" BackgroundColor="{StaticResource background_page}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <StackLayout Grid.Row="0" Orientation="Horizontal">
+
+                <StackLayout Padding="25,20">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    </StackLayout.GestureRecognizers>
+                    <Image HorizontalOptions="Start">
+                        
+                        <Image.Source>
+                            <FontImageSource
+                            Color="{StaticResource secondary_text}"
+                            FontFamily="{DynamicResource FontAwesomeFontFamily}"
+                            Size="25"
+                            Glyph="&#xf00d;"
+                            />
+                        </Image.Source>
+                    </Image>
                 </StackLayout>
 
-            </pancakeview:PancakeView>
+                <Label Text="Shopping Cart Checkout" Margin="-50,0,0,0" TextColor="{StaticResource secondary_text}" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
 
-            <Label Text="Shipping Method" Margin="25,25,0,0" TextColor="{StaticResource icons}" FontSize="Medium" FontAttributes="Bold"/>
-            <pancakeview:PancakeView BackgroundColor="#20FFFFFF" Padding="30,15" CornerRadius="50,0,50,50">
-                <StackLayout>
-                    <Label Text="Ludwing Von Mises" TextColor="{StaticResource icons}"/>
-                    <Label Text="(99) 9999-9999" TextColor="{StaticResource icons}"/>
+            </StackLayout>
+
+            
+
+            <ScrollView Grid.Row="1">
+                <StackLayout Padding="15,0">
+                    <Label Text="Info" Margin="25,0,0,0" TextColor="{StaticResource secondary_text}" FontSize="Medium" FontAttributes="Bold"/>
+                    <pancakeview:PancakeView BackgroundGradientStartColor="Accent" BackgroundGradientEndColor="Orange" BackgroundGradientAngle="90" Padding="30,15" CornerRadius="50,0,50,50">
+                        <StackLayout Orientation="Horizontal">
+                            <StackLayout>
+                                <Label Text="Ludwing Von Mises" TextColor="{StaticResource icons}" FontAttributes="Bold" />
+                                <Label Text="(99) 9999-9999" TextColor="{StaticResource icons}" FontAttributes="Bold" />
+                            </StackLayout>
+
+                            <Image VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand">
+                                <Image.Source>
+                                    <FontImageSource
+                                    Color="{StaticResource icons}"
+                                    FontFamily="{DynamicResource FontAwesomeFontFamily}"
+                                    Size="20"
+                                    Glyph="&#xf054;"
+                                    />
+                                </Image.Source>
+                            </Image>
+                        </StackLayout>
+
+
+                    </pancakeview:PancakeView>
+
+                    <!--<Label Text="Shipping Method" Margin="25,25,0,0" TextColor="{StaticResource secondary_text}" FontSize="Medium" FontAttributes="Bold"/>
+                    <pancakeview:PancakeView BackgroundColor="#20000000" Padding="30,15" CornerRadius="50,0,50,50">
+                        <StackLayout>
+                            <Label Text="Ludwing Von Mises" TextColor="{StaticResource secondary_text}"/>
+                            <Label Text="(99) 9999-9999" TextColor="{StaticResource secondary_text}"/>
+                        </StackLayout>
+
+                    </pancakeview:PancakeView>-->
+
+                    <Label Text="Shipping Address" Margin="25,30,0,0" TextColor="{StaticResource secondary_text}" FontSize="Medium" FontAttributes="Bold"/>
+                    <pancakeview:PancakeView BackgroundGradientStartColor="Accent" BackgroundGradientEndColor="Orange" BackgroundGradientAngle="90" Padding="30,15" CornerRadius="50,0,50,50">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Address, 30, Apto 15 - District, City - 00000-000" TextColor="{StaticResource icons}" MaxLines="1" LineBreakMode="TailTruncation" FontAttributes="Bold" />
+                            <Image VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand">
+                                <Image.Source>
+                                    <FontImageSource
+                                    Color="{StaticResource icons}"
+                                    FontFamily="{DynamicResource FontAwesomeFontFamily}"
+                                    Size="20"
+                                    Glyph="&#xf054;"
+                                    />
+                                </Image.Source>
+                            </Image>
+                        </StackLayout>
+
+                    </pancakeview:PancakeView>
+
+                    <Label Text="Payment Method" Margin="25,30,0,0" TextColor="{StaticResource secondary_text}" FontSize="Medium" FontAttributes="Bold"/>
+                    <pancakeview:PancakeView BackgroundGradientStartColor="Accent" BackgroundGradientEndColor="Orange" BackgroundGradientAngle="90" Padding="30,15" CornerRadius="50,0,50,50">
+                        <StackLayout Orientation="Horizontal">
+                            <Image VerticalOptions="CenterAndExpand" HeightRequest="20" Source="https://brand.mastercard.com/content/dam/mccom/brandcenter/thumbnails/mastercard_circles_92px_2x.png"/>
+
+                            <Label Text="Master Card ****** 7777" TextColor="{StaticResource icons}" FontAttributes="Bold"/>
+
+                            <Image VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand">
+                                <Image.Source>
+                                    <FontImageSource
+                                    Color="{StaticResource icons}"
+                                    FontFamily="{DynamicResource FontAwesomeFontFamily}"
+                                    Size="20"
+                                    Glyph="&#xf054;"
+                                    />
+                                </Image.Source>
+                            </Image>
+                        </StackLayout>
+
+                    </pancakeview:PancakeView>
+
+
+
                 </StackLayout>
+            </ScrollView>
 
-            </pancakeview:PancakeView>
+            <local:CurrentShoppingCartView BindingContext="{Binding CurrentShoppingCartVM}" Grid.Row="2"/>
 
-            <Label Text="Shipping Address" Margin="25,25,0,0" TextColor="{StaticResource icons}" FontSize="Medium" FontAttributes="Bold"/>
-            <pancakeview:PancakeView BackgroundColor="#20FFFFFF" Padding="30,15" CornerRadius="50,0,50,50">
-                <StackLayout>
-                    <Label Text="Ludwing Von Mises" TextColor="{StaticResource icons}"/>
-                    <Label Text="(99) 9999-9999" TextColor="{StaticResource icons}"/>
-                </StackLayout>
+        </Grid>
 
-            </pancakeview:PancakeView>
-
-            <Label Text="Payment Method" Margin="25,25,0,0" TextColor="{StaticResource icons}" FontSize="Medium" FontAttributes="Bold"/>
-            <pancakeview:PancakeView BackgroundColor="#20FFFFFF" Padding="30,15" CornerRadius="50,0,50,50">
-                <StackLayout>
-                    <Label Text="Ludwing Von Mises" TextColor="{StaticResource icons}"/>
-                    <Label Text="(99) 9999-9999" TextColor="{StaticResource icons}"/>
-                </StackLayout>
-
-            </pancakeview:PancakeView>
-
-
-
-        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

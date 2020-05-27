@@ -16,6 +16,7 @@ namespace XamarinUI.AddToShoppingCard
     {
         public MainPage()
         {
+            NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
         }
 

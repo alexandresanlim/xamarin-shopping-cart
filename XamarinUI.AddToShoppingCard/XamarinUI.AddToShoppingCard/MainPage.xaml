@@ -33,7 +33,7 @@
                 </Grid.RowDefinitions>
 
                 <!--Top-->
-                <yummy:PancakeView BackgroundColor="{StaticResource primary_dark}" Grid.Row="0" CornerRadius="0,0,70,0" Padding="25">
+                <yummy:PancakeView BackgroundColor="{StaticResource primary_dark}" Grid.Row="0" CornerRadius="0,0,70,0" Padding="25,15">
                     <!--<Frame CornerRadius="20" Margin="0,-50,0,-80" BackgroundColor="{StaticResource background_page}" HasShadow="False" HeightRequest="50"/>-->
                     <StackLayout>
 
@@ -126,8 +126,10 @@
 
                 </StackLayout>
 
+                <local:CurrentShoppingCartView BindingContext="{Binding CurrentShoppingCartVM}" Grid.Row="2"/>
+
                 <!--Cart-->
-                <yummy:PancakeView Grid.Row="2" BackgroundColor="{StaticResource primary_dark }" CornerRadius="50,0,0,0">
+                <!--<yummy:PancakeView Grid.Row="2" BackgroundColor="{StaticResource primary_dark }" CornerRadius="50,0,0,0">
                     <StackLayout Padding="0,20,0,10">
 
                         <StackLayout Orientation="Horizontal" Padding="15,0">
@@ -159,11 +161,11 @@
 
                         <StackLayout Padding="10,0">
 
-                            <!--<StackLayout IsVisible="{Binding CurrentCart.ContentVisible}">-->
+                            --><!--<StackLayout IsVisible="{Binding CurrentCart.ContentVisible}">--><!--
 
                             <StackLayout IsVisible="{Binding CurrentCart.ContentVisible}">
                                 <CollectionView HeightRequest="130" ItemsSource="{Binding CurrentCart.Itens}" IsVisible="{Binding CurrentCart.Itens, Converter={StaticResource hasDataConverter}}" x:Name="collectionViewCustom">
-                                    <!--<CollectionView HeightRequest="130" ItemsSource="{Binding CurrentCart.Itens}">-->
+                                    --><!--<CollectionView HeightRequest="130" ItemsSource="{Binding CurrentCart.Itens}">--><!--
                                     <CollectionView.ItemsLayout>
                                         <LinearItemsLayout Orientation="Horizontal"></LinearItemsLayout>
                                     </CollectionView.ItemsLayout>
@@ -171,13 +173,13 @@
                                         <DataTemplate>
                                             <StackLayout Spacing="15" Padding="5,0">
                                                 <yummy:PancakeView HasShadow="False" HeightRequest="110" CornerRadius="15" Padding="15" BackgroundColor="{StaticResource primary}">
-                                                    <!--<Grid>
+                                                    --><!--<Grid>
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition Width="0.6*"/>
                                                     <ColumnDefinition Width="*"/>
                                                 </Grid.ColumnDefinitions>
 
-                                                <Image Grid.Column="0" Source="{Binding ImageUri}" HeightRequest="50" />-->
+                                                <Image Grid.Column="0" Source="{Binding ImageUri}" HeightRequest="50" />--><!--
 
                                                     <StackLayout>
                                                         <StackLayout Orientation="Horizontal">
@@ -251,14 +253,14 @@
 
 
 
-                                                                <!--<Label Text="+" FontSize="Title" Margin="20, 0" TextColor="{StaticResource icons}" FontAttributes="Bold"/>-->
+                                                                --><!--<Label Text="+" FontSize="Title" Margin="20, 0" TextColor="{StaticResource icons}" FontAttributes="Bold"/>--><!--
                                                             </yummy:PancakeView>
 
                                                         </StackLayout>
 
 
                                                     </StackLayout>
-                                                    <!--</Grid>-->
+                                                    --><!--</Grid>--><!--
                                                 </yummy:PancakeView>
                                             </StackLayout>
                                         </DataTemplate>
@@ -290,7 +292,7 @@
                             </yummy:PancakeView>
                         </StackLayout>
                     </StackLayout>
-                </yummy:PancakeView>
+                </yummy:PancakeView>-->
 
             </Grid>
 

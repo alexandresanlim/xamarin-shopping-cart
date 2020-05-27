@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,8 +11,12 @@ namespace XamarinUI.AddToShoppingCard
         {
             InitializeComponent();
 
+            MainPage = new NavigationPage(new MainPage())
+            {
+                BarBackgroundColor = Color.FromHex("#D32F2F"),
+            };
+            //MainPage = new CheckOutPage();
             //MainPage = new MainPage();
-            MainPage = new CheckOutPage();
         }
 
         protected override void OnStart()

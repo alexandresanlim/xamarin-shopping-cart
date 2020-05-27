@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:behavior="clr-namespace:XamarinUI.AddToShoppingCard.Behavior" xmlns:local="clr-namespace:XamarinUI.AddToShoppingCard" xmlns:converter="clr-namespace:XamarinUI.AddToShoppingCard.Converter"
+             mc:Ignorable="d"
+             x:Class="XamarinUI.AddToShoppingCard.CurrentShoppingCartView">
+
+
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <converter:HasDataConverter x:Key="hasDataConverter" />
+            <converter:InvertedBooleanConverter x:Key="invertedBooleanConverter" />
+            <converter:HasValueToBooleanConverter x:Key="hasValueToBooleanConverter" />
+        </ResourceDictionary>
+    </ContentView.Resources>
+
+    <ContentView.Content>
+        <yummy:PancakeView Grid.Row="2" BackgroundColor="{StaticResource primary_dark }" CornerRadius="50,0,0,0">
+            <StackLayout Padding="0,20,0,10">
+
+                <StackLayout Orientation="Horizontal" Padding="15,0">
+
+
+                    <Label Text="Current Cart" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="Small" TextColor="{StaticResource icons}"/>
+
+                    <Image VerticalOptions="CenterAndExpand">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ResumeCartCommand}" />
+                        </Image.GestureRecognizers>
+
+                        <Image.Source>
+                            <FontImageSource
+                                        Color="{StaticResource icons}"
+                                        FontFamily="{DynamicResource FontAwesomeFontFamily}"
+                                        Size="20"
+                                        Glyph="&#xf07a;"
+                                        />
+                        </Image.Source>
+                    </Image>
+
+                </StackLayout>
+
+
+
+                <BoxView HeightRequest="1" BackgroundColor="#30FFFFFF"/>
+
+
+                <StackLayout Padding="10,0">
+
+                    <StackLayout IsVisible="{Binding CurrentCart.ContentVisible}">
+
+                        <!--<StackLayout>-->
+                        <CollectionView HeightRequest="130" ItemsSource="{Binding CurrentCart.Itens}" IsVisible="{Binding CurrentCart.Itens, Converter={StaticResource hasDataConverter}}" x:Name="collectionViewCustom">
+                            <!--<CollectionView HeightRequest="130" ItemsSource="{Binding CurrentCart.Itens}">-->
+                            <CollectionView.ItemsLayout>
+                                <LinearItemsLayout Orientation="Horizontal"></LinearItemsLayout>
+                            </CollectionView.ItemsLayout>
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackLayout Spacing="15" Padding="5,0">
+                                        <yummy:PancakeView HasShadow="False" HeightRequest="110" CornerRadius="15" Padding="15" BackgroundColor="{StaticResource primary}">
+                                            <!--<Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="0.6*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+
+                                                <Image Grid.Column="0" Source="{Binding ImageUri}" HeightRequest="50" />-->
+
+                                            <StackLayout>
+                                                <StackLayout Orientation="Horizontal">
+                                                    <ScrollView HorizontalOptions="FillAndExpand">
+                                                        <Label Text="{Binding Title}" FontSize="Micro" TextColor="{StaticResource icons}" />
+                                                    </ScrollView>
+
+                                                    <yummy:PancakeView Padding="15,5">
+                                                        <Image>
+                                                            <Image.GestureRecognizers>
+                                                                <TapGestureRecognizer Command="{Binding Source={x:Reference collectionViewCustom}, Path=BindingContext.RemoveItemCommand}" CommandParameter="{Binding}" />
+                                                            </Image.GestureRecognizers>
+                                                            <Image.Source>
+                                                                <FontImageSource
+                                                                Color="{StaticResource accent}"
+                                                                FontFamily="{DynamicResource FontAwesomeFontFamily}"
+                                                                Size="20"
+                                                                Glyph="&#xf2ed;"
+                                                                />
+                                                            </Image.Source>
+                                                        </Image>
+                                                    </yummy:PancakeView>
+
+
+                                                </StackLayout>
+
+                                                <StackLayout Orientation="Horizontal">
+                                                    <Label Text="{Binding PricePresentation, StringFormat='Preço: {0}'}" VerticalOptions="EndAndExpand" FontSize="Micro" FontAttributes="Bold" TextColor="{StaticResource icons}" />
+                                                    <Label Text=" | " VerticalOptions="EndAndExpand" TextColor="{StaticResource icons}"/>
+                                                    <Label Text="{Binding PriceByQuantityPresentation, StringFormat='Total: {0}'}" VerticalOptions="EndAndExpand" FontSize="Micro" FontAttributes="Bold" TextColor="{StaticResource icons}" />
+                                                </StackLayout>
+
+                                                <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand">
+
+                                                    <yummy:PancakeView CornerRadius="50" IsVisible="{Binding Quantity, Converter={StaticResource hasValueToBooleanConverter},ConverterParameter=1}" BackgroundColor="{StaticResource accent}" Padding="20,0">
+                                                        <yummy:PancakeView.GestureRecognizers>
+                                                            <TapGestureRecognizer  Command="{Binding Source={x:Reference collectionViewCustom}, Path=BindingContext.RmQuantityCommand}" CommandParameter="{Binding}" />
+                                                        </yummy:PancakeView.GestureRecognizers>
+
+
+                                                        <Image VerticalOptions="CenterAndExpand">
+                                                            <Image.Source>
+                                                                <FontImageSource
+                                                                Color="{StaticResource primary_text}"
+                                                                FontFamily="{DynamicResource FontAwesomeFontFamily}"
+                                                                Size="20"
+                                                                Glyph="&#xf056;"
+                                                                />
+                                                            </Image.Source>
+                                                        </Image>
+
+                                                    </yummy:PancakeView>
+
+                                                    <Label Text="{Binding Quantity, Mode=TwoWay}" VerticalOptions="Center" Margin="10,0" FontSize="Medium" TextColor="{StaticResource icons}" FontAttributes="Bold"/>
+
+                                                    <yummy:PancakeView CornerRadius="50" BackgroundColor="{StaticResource accent}" Padding="20,0">
+                                                        <yummy:PancakeView.GestureRecognizers>
+                                                            <TapGestureRecognizer  Command="{Binding Source={x:Reference collectionViewCustom}, Path=BindingContext.AddQuantityCommand}" CommandParameter="{Binding}"  />
+                                                        </yummy:PancakeView.GestureRecognizers>
+
+                                                        <Image VerticalOptions="CenterAndExpand">
+                                                            <Image.Source>
+                                                                <FontImageSource
+                                                                Color="{StaticResource primary_text}"
+                                                                FontFamily="{DynamicResource FontAwesomeFontFamily}"
+                                                                Size="20"
+                                                                Glyph="&#xf055;"
+                                                                />
+                                                            </Image.Source>
+                                                        </Image>
+
+
+
+                                                        <!--<Label Text="+" FontSize="Title" Margin="20, 0" TextColor="{StaticResource icons}" FontAttributes="Bold"/>-->
+                                                    </yummy:PancakeView>
+
+                                                </StackLayout>
+
+
+                                            </StackLayout>
+                                            <!--</Grid>-->
+                                        </yummy:PancakeView>
+                                    </StackLayout>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+
+                        <BoxView HeightRequest="1" BackgroundColor="#10FFFFFF"/>
+
+                    </StackLayout>
+
+                    <Grid>
+                        <yummy:PancakeView BackgroundColor="{StaticResource accent}" CornerRadius="50,0,50,50">
+                            <yummy:PancakeView.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                            </yummy:PancakeView.GestureRecognizers>
+                            <StackLayout Padding="15" Orientation="Horizontal">
+                                <Label Text="{Binding CurrentCart.TotalPresentation, StringFormat='Proceed to checkout {0}'}" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" FontSize="Subtitle" TextColor="{StaticResource primary_text}" />
+                                <Image VerticalOptions="CenterAndExpand">
+                                    <Image.Source>
+                                        <FontImageSource
+                                                Color="{StaticResource primary_text}"
+                                                FontFamily="{DynamicResource FontAwesomeFontFamily}"
+                                                Size="20"
+                                                Glyph="&#xf054;"
+                                                />
+                                    </Image.Source>
+                                </Image>
+                            </StackLayout>
+                        </yummy:PancakeView>
+
+                        <yummy:PancakeView BackgroundColor="{StaticResource accent}" CornerRadius="50,0,50,50" IsVisible="{Binding CheckOutButtonVisible}">
+                            <StackLayout Padding="15" Orientation="Horizontal">
+                                <Label Text="{Binding CurrentCart.TotalPresentation, StringFormat='Check Out {0}'}" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" FontSize="Subtitle" TextColor="{StaticResource primary_text}" />
+                            </StackLayout>
+                        </yummy:PancakeView>
+
+                    </Grid>
+                </StackLayout>
+            </StackLayout>
+        </yummy:PancakeView>
+    </ContentView.Content>
+</ContentView>

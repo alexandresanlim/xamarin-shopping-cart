@@ -23,8 +23,8 @@ namespace XamarinUI.AddToShoppingCard
         private void ResetProps()
         {
             CurrentParentItem = new Item();
-            CurrentCart = new ShoppingCart();
             CurrentMountItem = new List<Item>();
+            CurrentShoppingCartVM = CurrentShoppingCartVM ?? new CurrentShoppingCartViewModel();
             ResetSubItens();
         }
 
@@ -121,22 +121,7 @@ namespace XamarinUI.AddToShoppingCard
             ChildListItems = CurrentParent?.ChildList.ToObservableCollection();
         }
 
-        private void AddItemInCurrentCart(Item item)
-        {
-            item.Quantity++;
-            item.PriceByQuantityPresentation = item.Price.ToString("C");
 
-            if (CurrentCart?.Itens == null || CurrentCart.Itens.Count.Equals(0))
-                CurrentCart.Itens = new ObservableCollection<Item>
-                {
-                    item
-                };
-
-            else
-                CurrentCart.Itens.Add(item);
-
-            ReloadTotal();
-        }
 
         #region Commands
 
@@ -159,16 +144,12 @@ namespace XamarinUI.AddToShoppingCard
                 return;
             }
 
-            if (CurrentCart.Itens != null && CurrentCart.Itens.Contains(item))
-            {
-                CurrentCart.Itens.FirstOrDefault(x => x == item).Quantity++;
-                CurrentCart.Itens.FirstOrDefault(x => x == item).PriceByQuantityPresentation = (CurrentCart.Itens.FirstOrDefault(x => x == item).Quantity * item.Price).ToString("C");
-                return;
-            }
 
-            AddItemInCurrentCart(item);
 
-            ReloadTotal();
+
+            CurrentShoppingCartVM.AddItemInCurrentCart(item);
+
+            //ReloadTotal();
         });
 
         public Command<Item> AddQuantityCommand => new Command<Item>((item) =>
@@ -189,7 +170,7 @@ namespace XamarinUI.AddToShoppingCard
             if (PhaseMore >= PhaseCount)
                 ConfirmSubItensButtonVisible = true;
 
-            ReloadTotal();
+            CurrentShoppingCartVM.ReloadTotal();
         });
 
         public Command<Item> RmQuantityCommand => new Command<Item>((item) =>
@@ -203,49 +184,19 @@ namespace XamarinUI.AddToShoppingCard
 
             ConfirmSubItensButtonVisible = false;
 
-            ReloadTotal();
+            CurrentShoppingCartVM.ReloadTotal();
         });
 
         public Command ConfirmSubitensCommand => new Command(() =>
         {
-            var a = CurrentMountItem.MountByList();
-
-            AddItemInCurrentCart(a);
-
+            CurrentShoppingCartVM.AddItemInCurrentCart(CurrentMountItem.MountByList());
 
             ResetSubItens();
-
-            //CurrentParentItem.Quantity++;
-            //CurrentMountItem.Add(CurrentParentItem);
-
-            //var itens = CurrentParent.ChildList.Where(x => x.Quantity > 0);
-
-            //var customItem = new Item { Price = CurrentParent.pa}
-
-            //ResetProps();
-
-            //SubItens = new ObservableCollection<Item>();
         });
 
-        public Command<Item> RemoveItemCommand => new Command<Item>((itemToRemove) =>
-        {
-            CurrentCart.Itens.Remove(itemToRemove);
 
-            ReloadTotal();
-        });
+      
 
-        private void ReloadTotal()
-        {
-            if (CurrentCart.Itens == null)
-                return;
-
-            CurrentCart.TotalPresentation = CurrentCart.Itens.Sum(x => x.PriceByQuantity).ToString("C");
-        }
-
-        public Command ResumeCartCommand => new Command(() =>
-        {
-            CurrentCart.ContentVisible = CurrentCart.ContentVisible ? false : true;
-        });
 
         #endregion
 
@@ -265,12 +216,7 @@ namespace XamarinUI.AddToShoppingCard
             get { return _subItens; }
         }
 
-        private ShoppingCart _currentCart;
-        public ShoppingCart CurrentCart
-        {
-            set { SetProperty(ref _currentCart, value); }
-            get { return _currentCart; }
-        }
+
 
         private int _phaseCount;
         public int PhaseCount
