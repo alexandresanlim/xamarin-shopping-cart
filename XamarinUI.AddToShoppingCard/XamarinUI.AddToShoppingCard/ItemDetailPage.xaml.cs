@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,24 +11,20 @@ using XamarinUI.AddToShoppingCard.Models;
 namespace XamarinUI.AddToShoppingCard
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class CheckOutPage : ContentPage
+    public partial class ItemDetailPage : ContentPage
     {
-        public CheckOutViewModel CheckOutVM => (CheckOutViewModel)BindingContext;
+        public ItemDetailViewModel ItemDetailVM => (ItemDetailViewModel)BindingContext;
 
-        public CheckOutPage(CurrentShoppingCartViewModel _currentCart)
+        public ItemDetailPage(Item itemDetail)
         {
             InitializeComponent();
-
-            NavigationPage.SetHasNavigationBar(this, false);
-
-            CheckOutVM.CurrentShoppingCartVM = _currentCart;
-            CheckOutVM.CurrentShoppingCartVM.CheckOutButtonVisible = true;
+            ItemDetailVM.CurrentItem = itemDetail;
         }
+
         private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
             Task.Run(async () =>
             {
-                CheckOutVM.CurrentShoppingCartVM.CheckOutButtonVisible = false;
                 await Navigation.PopModalAsync();
             });
         }

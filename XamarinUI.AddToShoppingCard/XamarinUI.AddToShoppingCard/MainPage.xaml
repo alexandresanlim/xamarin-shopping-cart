@@ -78,7 +78,7 @@
                 <!--List-->
                 <StackLayout Grid.Row="1" Spacing="15">
 
-                    <CollectionView ItemsSource="{Binding ChildListItems}" SelectedItem="{Binding SelectedItem}" x:Name="collectionView">
+                    <CollectionView ItemsSource="{Binding ChildListItems}" x:Name="collectionView">
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
                                 <StackLayout Spacing="0" Padding="10,0">
@@ -89,7 +89,11 @@
                                                 <ColumnDefinition Width="*"/>
                                             </Grid.ColumnDefinitions>
 
-                                            <Image Grid.Column="0" Source="{Binding ImageUri}" HeightRequest="50" />
+                                            <Image Grid.Column="0" Source="{Binding ImageUri}" HeightRequest="50">
+                                                <Image.GestureRecognizers>
+                                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" CommandParameter="{Binding}" />
+                                                </Image.GestureRecognizers>
+                                            </Image>
 
                                             <StackLayout Grid.Column="1">
 

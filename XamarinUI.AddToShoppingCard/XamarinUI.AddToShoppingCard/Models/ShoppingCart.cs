@@ -31,5 +31,12 @@ namespace XamarinUI.AddToShoppingCard.Models
             set { SetProperty(ref _contentVisible, value); }
             get { return _contentVisible; }
         }
+
+        private int _itensCount;
+        public int ItensCount
+        {
+            set { SetProperty(ref _itensCount, value); }
+            get { return _itensCount; }
+        }
     }
 }

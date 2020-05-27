@@ -68,7 +68,7 @@ namespace XamarinUI.AddToShoppingCard
                     {
                         new Item
                         {
-                            Title = "Hamburguer Hamburguer Hamburguer Hamburguer",
+                            Title = "Hamburguer Hamburguer",
                             Price = 50,
                             ImageUri = "https://images.unsplash.com/photo-1529738097101-93c2129413ed?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
                         },
@@ -88,12 +88,14 @@ namespace XamarinUI.AddToShoppingCard
                     new Item
                     {
                         Title = "Dunhill perfume bottle",
+                        Description = "Mussum Ipsum, cacilds vidis litro abertis. Leite de capivaris, leite de mula manquis sem cabeça. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis! Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi. Quem num gosta di mé, boa gentis num é.",
                         Price = 50,
                         ImageUri = "https://images.unsplash.com/photo-1521305916504-4a1121188589?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
                     },
                     new Item
                     {
                         Title = "White plastic container",
+                        Description = "Mussum Ipsum, cacilds vidis litro abertis. Mé faiz elementum girarzis, nisi eros vermeio. Suco de cevadiss deixa as pessoas mais interessantis. Admodum accumsan disputationi eu sit. Vide electram sadipscing et per. Atirei o pau no gatis, per gatis num morreus.",
                         Price = 100,
                         ImageUri = "https://images.unsplash.com/photo-1573333515743-56d57731dd1f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
                     },

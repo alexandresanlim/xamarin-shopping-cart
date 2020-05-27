@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:pancakeview="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:local="clr-namespace:XamarinUI.AddToShoppingCard"
              mc:Ignorable="d"
              x:Class="XamarinUI.AddToShoppingCard.CheckOutPage"
-             Title="Place Order"
+             Title="Shopping Cart Checkout"
              >
 
     <ContentPage.BindingContext>
@@ -28,13 +28,13 @@
                         <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
                     </StackLayout.GestureRecognizers>
                     <Image HorizontalOptions="Start">
-                        
+
                         <Image.Source>
                             <FontImageSource
                             Color="{StaticResource secondary_text}"
                             FontFamily="{DynamicResource FontAwesomeFontFamily}"
                             Size="25"
-                            Glyph="&#xf00d;"
+                            Glyph="&#xf053;"
                             />
                         </Image.Source>
                     </Image>
@@ -44,22 +44,20 @@
 
             </StackLayout>
 
-            
-
             <ScrollView Grid.Row="1">
-                <StackLayout Padding="15,0">
+                <StackLayout Padding="15,15,15,0">
                     <Label Text="Info" Margin="25,0,0,0" TextColor="{StaticResource secondary_text}" FontSize="Medium" FontAttributes="Bold"/>
-                    <pancakeview:PancakeView BackgroundGradientStartColor="Accent" BackgroundGradientEndColor="Orange" BackgroundGradientAngle="90" Padding="30,15" CornerRadius="50,0,50,50">
+                    <pancakeview:PancakeView BackgroundColor="#10000000" Padding="30,15" CornerRadius="50,0,50,50">
                         <StackLayout Orientation="Horizontal">
                             <StackLayout>
-                                <Label Text="Ludwing Von Mises" TextColor="{StaticResource icons}" FontAttributes="Bold" />
-                                <Label Text="(99) 9999-9999" TextColor="{StaticResource icons}" FontAttributes="Bold" />
+                                <Label Text="Ludwing Von Mises" TextColor="{StaticResource secondary_text}" FontAttributes="Bold" />
+                                <Label Text="(99) 9999-9999" TextColor="{StaticResource secondary_text}" FontAttributes="Bold" />
                             </StackLayout>
 
                             <Image VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand">
                                 <Image.Source>
                                     <FontImageSource
-                                    Color="{StaticResource icons}"
+                                    Color="{StaticResource secondary_text}"
                                     FontFamily="{DynamicResource FontAwesomeFontFamily}"
                                     Size="20"
                                     Glyph="&#xf054;"
@@ -81,13 +79,13 @@
                     </pancakeview:PancakeView>-->
 
                     <Label Text="Shipping Address" Margin="25,30,0,0" TextColor="{StaticResource secondary_text}" FontSize="Medium" FontAttributes="Bold"/>
-                    <pancakeview:PancakeView BackgroundGradientStartColor="Accent" BackgroundGradientEndColor="Orange" BackgroundGradientAngle="90" Padding="30,15" CornerRadius="50,0,50,50">
+                    <pancakeview:PancakeView BackgroundColor="#10000000" Padding="30,15" CornerRadius="50,0,50,50">
                         <StackLayout Orientation="Horizontal">
-                            <Label Text="Address, 30, Apto 15 - District, City - 00000-000" TextColor="{StaticResource icons}" MaxLines="1" LineBreakMode="TailTruncation" FontAttributes="Bold" />
+                            <Label Text="Address, 30, Apto 15 - District, City - 00000-000" TextColor="{StaticResource secondary_text}" MaxLines="1" LineBreakMode="TailTruncation" FontAttributes="Bold" />
                             <Image VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand">
                                 <Image.Source>
                                     <FontImageSource
-                                    Color="{StaticResource icons}"
+                                    Color="{StaticResource secondary_text}"
                                     FontFamily="{DynamicResource FontAwesomeFontFamily}"
                                     Size="20"
                                     Glyph="&#xf054;"
@@ -99,16 +97,16 @@
                     </pancakeview:PancakeView>
 
                     <Label Text="Payment Method" Margin="25,30,0,0" TextColor="{StaticResource secondary_text}" FontSize="Medium" FontAttributes="Bold"/>
-                    <pancakeview:PancakeView BackgroundGradientStartColor="Accent" BackgroundGradientEndColor="Orange" BackgroundGradientAngle="90" Padding="30,15" CornerRadius="50,0,50,50">
+                    <pancakeview:PancakeView BackgroundColor="#10000000" Padding="30,15" CornerRadius="50,0,50,50">
                         <StackLayout Orientation="Horizontal">
                             <Image VerticalOptions="CenterAndExpand" HeightRequest="20" Source="https://brand.mastercard.com/content/dam/mccom/brandcenter/thumbnails/mastercard_circles_92px_2x.png"/>
 
-                            <Label Text="Master Card ****** 7777" TextColor="{StaticResource icons}" FontAttributes="Bold"/>
+                            <Label Text="Master Card ****** 7777" TextColor="{StaticResource secondary_text}" FontAttributes="Bold"/>
 
                             <Image VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand">
                                 <Image.Source>
                                     <FontImageSource
-                                    Color="{StaticResource icons}"
+                                    Color="{StaticResource secondary_text}"
                                     FontFamily="{DynamicResource FontAwesomeFontFamily}"
                                     Size="20"
                                     Glyph="&#xf054;"

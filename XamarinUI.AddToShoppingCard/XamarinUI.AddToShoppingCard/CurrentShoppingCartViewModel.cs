@@ -56,6 +56,7 @@ namespace XamarinUI.AddToShoppingCard
             if (CurrentCart.Itens == null)
                 return;
 
+            CurrentCart.ItensCount = CurrentCart.Itens.Count;
             CurrentCart.TotalPresentation = CurrentCart.Itens.Sum(x => x.PriceByQuantity).ToString("C");
         }
 

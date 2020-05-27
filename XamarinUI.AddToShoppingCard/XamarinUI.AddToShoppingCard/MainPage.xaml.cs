@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using XamarinUI.AddToShoppingCard.Extention;
+using XamarinUI.AddToShoppingCard.Models;
 
 namespace XamarinUI.AddToShoppingCard
 {
@@ -33,6 +34,12 @@ namespace XamarinUI.AddToShoppingCard
         private void StackLayout_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
 
+        }
+
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            var parameter = (TappedEventArgs)e;
+            Navigation.PushModalAsync(new ItemDetailPage((Item)parameter.Parameter), true);
         }
     }
 }

@@ -10,6 +10,8 @@ namespace XamarinUI.AddToShoppingCard.Models.Base
     {
         public string Title { get; set; }
 
+        public string Description { get; set; }
+
         /// <summary>
         /// Images from https://unsplash.com/s/photos/product?orientation=squarish
         /// </summary>

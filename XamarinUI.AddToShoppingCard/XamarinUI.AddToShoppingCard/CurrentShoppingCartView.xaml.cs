@@ -21,5 +21,19 @@ namespace XamarinUI.AddToShoppingCard
         {
             Navigation.PushModalAsync(new CheckOutPage((CurrentShoppingCartViewModel)BindingContext), true);
         }
+
+        private void L_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName.Equals(nameof(CollectionView.ItemsSource)))
+            {
+                var c = (CollectionView)sender;
+
+                Task.Run(async () =>
+                {
+                    c.Opacity = 0;
+                    await c.FadeTo(1, 500);
+                });
+            }
+        }
     }
 }
