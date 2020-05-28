@@ -27,4 +27,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Src\img\screen\android\" />
+    <Folder Include="Src\img\screen\ios\" />
+  </ItemGroup>
 </Project>
