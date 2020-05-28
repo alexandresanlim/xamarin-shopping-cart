@@ -22,10 +22,10 @@
 ------------ | ------------- | ------ | ---- | ------
 <img width="200" src="https://github.com/alexandresanlim/XamarinUI.AddToShoppingCart/blob/master/XamarinUI.AddToShoppingCard/XamarinUI.AddToShoppingCard/Src/img/screen/ios/1.png?raw=true"/>| <img width="200" src="https://github.com/alexandresanlim/XamarinUI.AddToShoppingCart/blob/master/XamarinUI.AddToShoppingCard/XamarinUI.AddToShoppingCard/Src/img/screen/ios/2.png?raw=true"/> | <img width="200" src="https://github.com/alexandresanlim/XamarinUI.AddToShoppingCart/blob/master/XamarinUI.AddToShoppingCard/XamarinUI.AddToShoppingCard/Src/img/screen/ios/3.png?raw=true"/> | <img width="200" src="https://github.com/alexandresanlim/XamarinUI.AddToShoppingCart/blob/master/XamarinUI.AddToShoppingCard/XamarinUI.AddToShoppingCard/Src/img/screen/ios/4.png?raw=true"/> | <img width="200" src="https://github.com/alexandresanlim/XamarinUI.AddToShoppingCart/blob/master/XamarinUI.AddToShoppingCard/XamarinUI.AddToShoppingCard/Src/img/screen/ios/5.png?raw=true"/>
 
-This design don't is a clone but my inspiration is here:
+- This design don't is a clone but my inspiration is here:
 https://dribbble.com/shots/6716738-Online-Shop-App
 
-This project dont use third party packages ;).
+ - This project don't use third party packages ;).
 
 ## More
 <a href="https://github.com/alexandresanlim/XamarinUI.MyGallery"><img src="https://github.com/alexandresanlim/XamarinUI.MyGallery/blob/master/xamarin_ui_gallery_head.png?raw=true" /></a>
