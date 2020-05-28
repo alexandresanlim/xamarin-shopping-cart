@@ -21,7 +21,7 @@
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
 
-            <StackLayout Grid.Row="0" Orientation="Horizontal">
+            <StackLayout Grid.Row="0" Orientation="Horizontal" Margin="0,18,0,0">
 
                 <StackLayout Padding="25,20">
                     <StackLayout.GestureRecognizers>
@@ -47,7 +47,7 @@
             <ScrollView Grid.Row="1">
                 <StackLayout Padding="15,15,15,0">
                     <Label Text="Info" Margin="25,0,0,0" TextColor="{StaticResource secondary_text}" FontSize="Medium" FontAttributes="Bold"/>
-                    <pancakeview:PancakeView BackgroundColor="#10000000" Padding="30,15" CornerRadius="50,0,50,50">
+                    <pancakeview:PancakeView BackgroundColor="#10000000" Padding="30,15" CornerRadius="35,0,35,35">
                         <StackLayout Orientation="Horizontal">
                             <StackLayout>
                                 <Label Text="Ludwing Von Mises" TextColor="{StaticResource secondary_text}" FontAttributes="Bold" />
@@ -79,7 +79,7 @@
                     </pancakeview:PancakeView>-->
 
                     <Label Text="Shipping Address" Margin="25,30,0,0" TextColor="{StaticResource secondary_text}" FontSize="Medium" FontAttributes="Bold"/>
-                    <pancakeview:PancakeView BackgroundColor="#10000000" Padding="30,15" CornerRadius="50,0,50,50">
+                    <pancakeview:PancakeView BackgroundColor="#10000000" Padding="30,15" CornerRadius="25,0,25,25">
                         <StackLayout Orientation="Horizontal">
                             <Label Text="Address, 30, Apto 15 - District, City - 00000-000" TextColor="{StaticResource secondary_text}" MaxLines="1" LineBreakMode="TailTruncation" FontAttributes="Bold" />
                             <Image VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand">
@@ -97,7 +97,7 @@
                     </pancakeview:PancakeView>
 
                     <Label Text="Payment Method" Margin="25,30,0,0" TextColor="{StaticResource secondary_text}" FontSize="Medium" FontAttributes="Bold"/>
-                    <pancakeview:PancakeView BackgroundColor="#10000000" Padding="30,15" CornerRadius="50,0,50,50">
+                    <pancakeview:PancakeView BackgroundColor="#10000000" Padding="30,15" CornerRadius="25,0,25,25">
                         <StackLayout Orientation="Horizontal">
                             <Image VerticalOptions="CenterAndExpand" HeightRequest="20" Source="https://brand.mastercard.com/content/dam/mccom/brandcenter/thumbnails/mastercard_circles_92px_2x.png"/>
 

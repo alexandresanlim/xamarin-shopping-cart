@@ -17,6 +17,9 @@
         <Color x:Key="divider">#30BDBDBD</Color>
         <Color x:Key="background_page">#ecf0f1</Color>
 
+        <Color x:Key="gradient_start">#eb3b5a</Color>
+        <Color x:Key="gradient_end">#fa8231</Color>
+
         <OnPlatform x:Key="FontAwesomeFontFamily" x:TypeArguments="x:String">
             <On Platform="iOS" Value="Font Awesome 5 Free" />
             <On Platform="Android" Value="fa-solid-900.ttf#Font Awesome 5 Free" />

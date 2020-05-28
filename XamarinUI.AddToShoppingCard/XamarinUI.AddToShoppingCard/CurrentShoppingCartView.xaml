@@ -39,7 +39,7 @@
                         </Image.Source>
                     </Image>
 
-                    <yummy:PancakeView CornerRadius="50" BackgroundColor="{StaticResource accent}" Padding="10,5" VerticalOptions="End">
+                    <yummy:PancakeView CornerRadius="15" BackgroundColor="{StaticResource accent}" Padding="10,7" VerticalOptions="End">
                         <Label Text="{Binding CurrentCart.ItensCount}" FontSize="Micro" FontAttributes="Bold" TextColor="{StaticResource primary_text}"/>
                     </yummy:PancakeView>
                     
@@ -66,11 +66,13 @@
                                                         <Label Text="{Binding Title}" FontSize="Micro" TextColor="{StaticResource icons}" />
                                                     </ScrollView>
 
-                                                    <yummy:PancakeView Padding="15,5">
+                                                    <StackLayout Padding="15,0,0,0">
+                                                        <StackLayout.GestureRecognizers>
+                                                            <TapGestureRecognizer Command="{Binding Source={x:Reference collectionViewCustom}, Path=BindingContext.RemoveItemCommand}" CommandParameter="{Binding}" />
+                                                        </StackLayout.GestureRecognizers>
+
                                                         <Image>
-                                                            <Image.GestureRecognizers>
-                                                                <TapGestureRecognizer Command="{Binding Source={x:Reference collectionViewCustom}, Path=BindingContext.RemoveItemCommand}" CommandParameter="{Binding}" />
-                                                            </Image.GestureRecognizers>
+                                                           
                                                             <Image.Source>
                                                                 <FontImageSource
                                                                 Color="{StaticResource accent}"
@@ -80,7 +82,7 @@
                                                                 />
                                                             </Image.Source>
                                                         </Image>
-                                                    </yummy:PancakeView>
+                                                    </StackLayout>
 
 
                                                 </StackLayout>
@@ -93,7 +95,7 @@
 
                                                 <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand">
 
-                                                    <yummy:PancakeView CornerRadius="50" IsVisible="{Binding Quantity, Converter={StaticResource hasValueToBooleanConverter},ConverterParameter=1}" BackgroundColor="{StaticResource accent}" Padding="20,0">
+                                                    <yummy:PancakeView CornerRadius="13" IsVisible="{Binding Quantity, Converter={StaticResource hasValueToBooleanConverter},ConverterParameter=1}" BackgroundColor="{StaticResource accent}" Padding="20,4">
                                                         <yummy:PancakeView.GestureRecognizers>
                                                             <TapGestureRecognizer  Command="{Binding Source={x:Reference collectionViewCustom}, Path=BindingContext.RmQuantityCommand}" CommandParameter="{Binding}" />
                                                         </yummy:PancakeView.GestureRecognizers>
@@ -113,7 +115,7 @@
 
                                                     <Label Text="{Binding Quantity, Mode=TwoWay}" VerticalOptions="Center" Margin="10,0" FontSize="Medium" TextColor="{StaticResource icons}" FontAttributes="Bold"/>
 
-                                                    <yummy:PancakeView CornerRadius="50" BackgroundColor="{StaticResource accent}" Padding="20,0">
+                                                    <yummy:PancakeView CornerRadius="13" BackgroundColor="{StaticResource accent}" Padding="20,4">
                                                         <yummy:PancakeView.GestureRecognizers>
                                                             <TapGestureRecognizer  Command="{Binding Source={x:Reference collectionViewCustom}, Path=BindingContext.AddQuantityCommand}" CommandParameter="{Binding}"  />
                                                         </yummy:PancakeView.GestureRecognizers>
@@ -147,12 +149,12 @@
                     </StackLayout>
 
                     <Grid IsVisible="{Binding CurrentCart.Itens, Mode=TwoWay, Converter={StaticResource hasDataConverter}}">
-                        <yummy:PancakeView BackgroundColor="{StaticResource accent}" CornerRadius="50,0,50,50">
+                        <yummy:PancakeView BackgroundColor="{StaticResource accent}" CornerRadius="30,0,30,30">
                             <yummy:PancakeView.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
                             </yummy:PancakeView.GestureRecognizers>
                             <StackLayout Padding="15" Orientation="Horizontal">
-                                <Label Text="{Binding CurrentCart.TotalPresentation, StringFormat='Proceed to checkout {0}'}" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" FontSize="Subtitle" TextColor="{StaticResource primary_text}" />
+                                <Label Text="{Binding CurrentCart.TotalPresentation, StringFormat='Proceed to checkout {0}'}" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" FontSize="Body" TextColor="{StaticResource primary_text}" />
                                 <Image VerticalOptions="CenterAndExpand">
                                     <Image.Source>
                                         <FontImageSource
@@ -166,9 +168,9 @@
                             </StackLayout>
                         </yummy:PancakeView>
 
-                        <yummy:PancakeView BackgroundColor="{StaticResource accent}" CornerRadius="50,0,50,50" IsVisible="{Binding CheckOutButtonVisible}">
+                        <yummy:PancakeView BackgroundColor="{StaticResource accent}" CornerRadius="30,0,30,30" IsVisible="{Binding CheckOutButtonVisible}">
                             <StackLayout Padding="15" Orientation="Horizontal">
-                                <Label Text="{Binding CurrentCart.TotalPresentation, StringFormat='Check Out {0}'}" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" FontSize="Subtitle" TextColor="{StaticResource primary_text}" />
+                                <Label Text="{Binding CurrentCart.TotalPresentation, StringFormat='Check Out {0}'}" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" FontSize="Body" TextColor="{StaticResource primary_text}" />
                             </StackLayout>
                         </yummy:PancakeView>
 

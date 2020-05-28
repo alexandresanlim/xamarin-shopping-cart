@@ -47,9 +47,28 @@
             </Image>
 
             <StackLayout Grid.Row="2" Padding="15">
-                <Label Text="{Binding CurrentItem.PricePresentation}" FontSize="Title" TextColor="{StaticResource secondary_text}" FontAttributes="Bold"/>
-                <Label FontSize="Body" Text="{Binding CurrentItem.Description}"/>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="{Binding CurrentItem.PricePresentation}" FontSize="Title" TextColor="{StaticResource secondary_text}" FontAttributes="Bold"/>
+
+                    <Image HorizontalOptions="EndAndExpand">
+                        <Image.Source>
+                            <FontImageSource
+                            Color="{StaticResource secondary_text}"
+                            FontFamily="{DynamicResource FontAwesomeFontFamily}"
+                            Size="25"
+                            Glyph="&#xf004;"
+                            />
+                        </Image.Source>
+                    </Image>
+                    
+                </StackLayout>
+
+                <Label FontSize="Body" Text="{Binding CurrentItem.Description}" TextColor="{StaticResource secondary_text}"/>
+
+
             </StackLayout>
+            
 
         </Grid>
 
