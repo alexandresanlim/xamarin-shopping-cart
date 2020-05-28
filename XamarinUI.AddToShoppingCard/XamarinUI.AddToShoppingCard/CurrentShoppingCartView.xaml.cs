@@ -12,6 +12,8 @@ namespace XamarinUI.AddToShoppingCard
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CurrentShoppingCartView : ContentView
     {
+        public CurrentShoppingCartViewModel CurrentShoppingCartVM => (CurrentShoppingCartViewModel)BindingContext;
+
         public CurrentShoppingCartView()
         {
             InitializeComponent();
@@ -19,21 +21,13 @@ namespace XamarinUI.AddToShoppingCard
 
         private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
-            Navigation.PushModalAsync(new CheckOutPage((CurrentShoppingCartViewModel)BindingContext), true);
-        }
-
-        private void L_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
-        {
-            if (e.PropertyName.Equals(nameof(CollectionView.ItemsSource)))
+            if (!(CurrentShoppingCartVM.CurrentCart.ItensCount > 0))
             {
-                var c = (CollectionView)sender;
-
-                Task.Run(async () =>
-                {
-                    c.Opacity = 0;
-                    await c.FadeTo(1, 500);
-                });
+                App.Current.MainPage.DisplayAlert("Ops!", "The Current Cart does not contains items", "Ok");
+                return;
             }
+
+            Navigation.PushModalAsync(new CheckOutPage(CurrentShoppingCartVM), true);
         }
     }
 }

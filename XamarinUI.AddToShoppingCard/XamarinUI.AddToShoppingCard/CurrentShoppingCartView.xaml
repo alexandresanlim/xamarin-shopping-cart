@@ -29,7 +29,6 @@
 
                     <Image VerticalOptions="CenterAndExpand">
                       
-
                         <Image.Source>
                             <FontImageSource
                                         Color="{StaticResource icons}"
@@ -53,7 +52,7 @@
                     
                     <StackLayout IsVisible="{Binding CurrentCart.ContentVisible}">
 
-                        <CollectionView HeightRequest="130" PropertyChanged="L_PropertyChanged" ItemsUpdatingScrollMode="KeepLastItemInView" ItemsSource="{Binding CurrentCart.Itens}" IsVisible="{Binding CurrentCart.Itens, Converter={StaticResource hasDataConverter}}" x:Name="collectionViewCustom">
+                        <CollectionView HeightRequest="130" ItemsUpdatingScrollMode="KeepLastItemInView" ItemsSource="{Binding CurrentCart.Itens}" IsVisible="{Binding CurrentCart.Itens,Mode=TwoWay, Converter={StaticResource hasDataConverter}}" x:Name="collectionViewCustom">
                             <CollectionView.ItemsLayout>
                                 <LinearItemsLayout Orientation="Horizontal"></LinearItemsLayout>
                             </CollectionView.ItemsLayout>
@@ -147,7 +146,7 @@
 
                     </StackLayout>
 
-                    <Grid IsVisible="{Binding CurrentCart.Itens, Converter={StaticResource hasDataConverter}}">
+                    <Grid IsVisible="{Binding CurrentCart.Itens, Mode=TwoWay, Converter={StaticResource hasDataConverter}}">
                         <yummy:PancakeView BackgroundColor="{StaticResource accent}" CornerRadius="50,0,50,50">
                             <yummy:PancakeView.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>

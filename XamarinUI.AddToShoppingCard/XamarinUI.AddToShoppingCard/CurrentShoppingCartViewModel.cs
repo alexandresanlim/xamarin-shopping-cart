@@ -24,7 +24,7 @@ namespace XamarinUI.AddToShoppingCard
 
         public void AddItemInCurrentCart(Item item)
         {
-            CurrentCart.ContentVisible = true;
+            //CurrentCart.ContentVisible = true;
 
             if (CurrentCart.Itens != null && CurrentCart.Itens.Contains(item))
             {
@@ -58,6 +58,8 @@ namespace XamarinUI.AddToShoppingCard
 
             CurrentCart.ItensCount = CurrentCart.Itens.Count;
             CurrentCart.TotalPresentation = CurrentCart.Itens.Sum(x => x.PriceByQuantity).ToString("C");
+
+            CurrentCart.ContentVisible = CurrentCart.ItensCount > 0;
         }
 
         public Command<Item> AddQuantityCommand => new Command<Item>((item) =>

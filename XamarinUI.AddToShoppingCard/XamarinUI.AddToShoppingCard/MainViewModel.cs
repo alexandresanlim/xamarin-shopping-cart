@@ -55,67 +55,67 @@ namespace XamarinUI.AddToShoppingCard
         {
             CurrentParent = new Parent
             {
-                Title = "S.C.L.C. jobs-income text",
-                ImageUri = "https://images.unsplash.com/photo-1564052513728-d88c2f9d29e7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
+                Title = "Los Pollos Hermanos",
+                ImageUri = "https://images-na.ssl-images-amazon.com/images/I/9169R9h4ASL._AC_SX450_.jpg",
                 ChildList = new List<Item>
                 {
                     new Item
                     {
-                        Title = "Combo",
+                        Title = "Pizza Big",
                         Price = 50,
-                        ImageUri = "https://images.unsplash.com/photo-1529738097101-93c2129413ed?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+                        ImageUri = "https://images.unsplash.com/photo-1590083745251-4fdb0b285c6a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
                     }.AddSubItens(new List<Item>
                     {
                         new Item
                         {
-                            Title = "Hamburguer Hamburguer",
-                            Price = 50,
-                            ImageUri = "https://images.unsplash.com/photo-1529738097101-93c2129413ed?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+                            Title = "Flavor 1",
+                            Description = "Mussum Ipsum, cacilds vidis litro abertis. Sapien in monti palavris qui num significa nadis i pareci latim. Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio. Nec orci ornare consequat. Praesent lacinia ultrices consectetur. Sed non ipsum felis. Cevadis im ampola pa arma uma pindureta.",
+                            ImageUri = "https://images.unsplash.com/photo-1527133256227-fc3549f55332?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
                         },
                         new Item
                         {
-                            Title = "Refrigerante",
-                            Price = 100,
-                            ImageUri = "https://images.unsplash.com/photo-1571115637015-f572abdfc43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+                            Title = "Falavor 2",
+                            Description = "Mussum Ipsum, cacilds vidis litro abertis. Sapien in monti palavris qui num significa nadis i pareci latim. Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio. Nec orci ornare consequat. Praesent lacinia ultrices consectetur. Sed non ipsum felis. Cevadis im ampola pa arma uma pindureta.",
+                            ImageUri = "https://images.unsplash.com/photo-1590083745251-4fdb0b285c6a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
                         },
                         new Item
                         {
-                            Title = "Extra",
-                            Price = 100,
-                            ImageUri = "https://images.unsplash.com/photo-1571115637015-f572abdfc43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+                            Title = "Flavor 3",
+                            Description = "Mussum Ipsum, cacilds vidis litro abertis. Sapien in monti palavris qui num significa nadis i pareci latim. Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio. Nec orci ornare consequat. Praesent lacinia ultrices consectetur. Sed non ipsum felis. Cevadis im ampola pa arma uma pindureta.",
+                            ImageUri = "https://images.unsplash.com/photo-1585238342024-78d387f4a707?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
                         }
                     }, 3),
                     new Item
                     {
-                        Title = "Dunhill perfume bottle",
+                        Title = "Salad Burger",
                         Description = "Mussum Ipsum, cacilds vidis litro abertis. Leite de capivaris, leite de mula manquis sem cabeça. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis! Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi. Quem num gosta di mé, boa gentis num é.",
-                        Price = 50,
-                        ImageUri = "https://images.unsplash.com/photo-1521305916504-4a1121188589?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
+                        Price = 10,
+                        ImageUri = "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
                     },
                     new Item
                     {
-                        Title = "White plastic container",
+                        Title = "Beef Burger",
                         Description = "Mussum Ipsum, cacilds vidis litro abertis. Mé faiz elementum girarzis, nisi eros vermeio. Suco de cevadiss deixa as pessoas mais interessantis. Admodum accumsan disputationi eu sit. Vide electram sadipscing et per. Atirei o pau no gatis, per gatis num morreus.",
-                        Price = 100,
-                        ImageUri = "https://images.unsplash.com/photo-1573333515743-56d57731dd1f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
+                        Price = 15,
+                        ImageUri = "https://images.unsplash.com/photo-1551360021-0ff7982d13dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
                     },
                     new Item
                     {
-                        Title = "Black Sony Android smartphone with water drops",
-                        Price = 300,
-                        ImageUri = "https://images.unsplash.com/photo-1546039907-7fa05f864c02?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
+                        Title = "Fries",
+                        Price = 3,
+                        ImageUri = "https://images.unsplash.com/photo-1579047288156-bdc39e1b39e8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
                     },
                     new Item
                     {
-                        Title = "Gray bottle opener beside opened bottle",
-                        Price = 300,
-                        ImageUri = "https://images.unsplash.com/photo-1481931715705-36f5f79f1f3d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=527&q=80"
+                        Title = "Soda",
+                        Price = 3,
+                        ImageUri = "https://images.unsplash.com/photo-1570900652780-31674a93b68d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
                     },
                     new Item
                     {
-                        Title = "Yellow envelopes",
-                        Price = 300,
-                        ImageUri = "https://images.unsplash.com/photo-1559916712-ae4427996e1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
+                        Title = "Juice",
+                        Price = 3,
+                        ImageUri = "https://images.unsplash.com/photo-1585600270404-543d0eac85e1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
                     }
                 }
             };
@@ -177,6 +177,9 @@ namespace XamarinUI.AddToShoppingCard
 
         public Command<Item> RmQuantityCommand => new Command<Item>((item) =>
         {
+            if (item.Quantity.Equals(0))
+                return;
+
             item.Quantity--;
             item.PriceByQuantityPresentation = (item.Quantity * item.Price).ToString("C");
 

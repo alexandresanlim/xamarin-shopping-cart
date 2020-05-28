@@ -68,7 +68,6 @@
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <BundleResource Include="Resources\fa-solid-900.ttf" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
@@ -136,5 +135,8 @@
       <Project>{567662E4-26AB-4247-AEF8-C29A7AD03111}</Project>
       <Name>XamarinUI.AddToShoppingCard</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\fa-solid-900.ttf" />
   </ItemGroup>
 </Project>

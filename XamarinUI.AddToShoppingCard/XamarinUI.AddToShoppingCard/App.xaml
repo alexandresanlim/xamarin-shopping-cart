@@ -20,7 +20,6 @@
         <OnPlatform x:Key="FontAwesomeFontFamily" x:TypeArguments="x:String">
             <On Platform="iOS" Value="Font Awesome 5 Free" />
             <On Platform="Android" Value="fa-solid-900.ttf#Font Awesome 5 Free" />
-            <On Platform="UWP" Value="Assets/Fonts/fa-solid-900.ttf#Font Awesome 5 Free" />
         </OnPlatform>
 
         <Style TargetType="Grid">
