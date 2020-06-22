@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
+using XamarinUI.AddToShoppingCard.Controls.Interfaces;
 using XamarinUI.AddToShoppingCard.Extention;
 using XamarinUI.AddToShoppingCard.Models;
 using XamarinUI.AddToShoppingCard.Models.Base;
