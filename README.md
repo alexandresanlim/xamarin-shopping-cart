@@ -25,10 +25,10 @@
 
 ## More
 
-- This design don't is a clone but my inspiration is here:
+- This design don't is a clone but my inspiration is here:<br/>
 https://dribbble.com/shots/6716738-Online-Shop-App
 
-- Third party package used:
+- Third party package used:<br/>
 https://github.com/sthewissen/Xamarin.Forms.PancakeView
 
 <a href="https://github.com/alexandresanlim/XamarinUI.MyGallery"><img src="https://github.com/alexandresanlim/XamarinUI.MyGallery/blob/master/xamarin_ui_gallery_head.png?raw=true" /></a>
