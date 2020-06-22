@@ -34,8 +34,15 @@
                 </Grid.RowDefinitions>
 
                 <!--Top-->
-                <yummy:PancakeView BackgroundColor="{StaticResource primary_dark}" Grid.Row="0" CornerRadius="0,0,70,0" Padding="25,15">
-                    <!--<Frame CornerRadius="20" Margin="0,-50,0,-80" BackgroundColor="{StaticResource background_page}" HasShadow="False" HeightRequest="50"/>-->
+                <yummy:PancakeView BackgroundColor="{StaticResource primary_dark}" Grid.Row="0" CornerRadius="0,0,70,0">
+
+                    <yummy:PancakeView.Padding>
+                        <OnPlatform x:TypeArguments="Thickness">
+                            <On Platform="iOS" Value="25,30,25,15" />
+                            <On Platform="Android" Value="25,15" />
+                        </OnPlatform>
+                    </yummy:PancakeView.Padding>
+
                     <StackLayout>
 
                         <yummy:PancakeView Grid.Row="0" BackgroundColor="{StaticResource primary}" CornerRadius="35,0,35,50" Padding="10" Margin="0,20,0,0">

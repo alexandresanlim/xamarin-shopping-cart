@@ -17,7 +17,14 @@
 
     <ContentView.Content>
         <yummy:PancakeView BackgroundColor="{StaticResource primary_dark }" CornerRadius="50,0,0,0">
-            <StackLayout Padding="0,20,0,10">
+            <StackLayout>
+
+                <StackLayout.Padding>
+                    <OnPlatform x:TypeArguments="Thickness">
+                        <On Platform="iOS" Value="0,20,0,20" />
+                        <On Platform="Android" Value="0,20,0,10" />
+                    </OnPlatform>
+                </StackLayout.Padding>
 
                 <StackLayout Orientation="Horizontal" Padding="15,0">
 
