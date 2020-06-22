@@ -42,9 +42,12 @@
 
             </StackLayout>
 
-            <Image Grid.Row="1" Source="{Binding CurrentItem.ImageUri}" HorizontalOptions="FillAndExpand">
+            <yummy:PancakeView Grid.Row="1" Margin="10,0" CornerRadius="15">
+                <Image Source="{Binding CurrentItem.ImageUri}" Aspect="AspectFill" />
+                
+            </yummy:PancakeView>
 
-            </Image>
+            
 
             <StackLayout Grid.Row="2" Padding="15">
 

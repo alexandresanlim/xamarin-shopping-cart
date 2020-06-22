@@ -123,8 +123,6 @@ namespace XamarinUI.AddToShoppingCard
             ChildListItems = CurrentParent?.ChildList.ToObservableCollection();
         }
 
-
-
         #region Commands
 
         public Command ResetSubItensCommand => new Command(() =>
@@ -146,12 +144,7 @@ namespace XamarinUI.AddToShoppingCard
                 return;
             }
 
-
-
-
             CurrentShoppingCartVM.AddItemInCurrentCart(item);
-
-            //ReloadTotal();
         });
 
         public Command<Item> AddQuantityCommand => new Command<Item>((item) =>
@@ -199,10 +192,6 @@ namespace XamarinUI.AddToShoppingCard
             ResetSubItens();
         });
 
-
-      
-
-
         #endregion
 
         public List<Item> CurrentMountItem { get; set; } = new List<Item>();
@@ -220,8 +209,6 @@ namespace XamarinUI.AddToShoppingCard
             set { SetProperty(ref _subItens, value); }
             get { return _subItens; }
         }
-
-
 
         private int _phaseCount;
         public int PhaseCount
@@ -244,47 +231,10 @@ namespace XamarinUI.AddToShoppingCard
             get { return _confirmSubItensButtonVisible; }
         }
 
-        //private RequireSubItensPresentaion _curentPhase;
-        //public RequireSubItensPresentaion CurentPhase
-        //{
-        //    set { SetProperty(ref _curentPhase, value); }
-        //    get { return _curentPhase; }
-        //}
-
         public Item SelectedItem { get; set; }
 
         public Item CurrentParentItem { get; set; }
 
         public Parent CurrentParent { get; set; }
     }
-
-    //public class RequireSubItensPresentaion : NotifyObjectBase
-    //{
-    //    private string _to;
-    //    public string To
-    //    {
-    //        set { SetProperty(ref _to, value); }
-    //        get { return _to; }
-    //    }
-
-    //    private int _phaseCount;
-    //    public int PhaseCount
-    //    {
-    //        set { SetProperty(ref _phaseCount, value); }
-    //        get { return _phaseCount; }
-    //    }
-
-    //    private int _phaseMore;
-    //    public int PhaseMore
-    //    {
-    //        set { SetProperty(ref _phaseMore, value); }
-    //        get { return _phaseMore; }
-    //    }
-    //    private int _phaseLess;
-    //    public int PhaseLess
-    //    {
-    //        set { SetProperty(ref _phaseLess, value); }
-    //        get { return _phaseLess; }
-    //    }
-    //}
 }
