@@ -2,7 +2,7 @@
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:behavior="clr-namespace:XamarinUI.AddToShoppingCard.Behavior" xmlns:local="clr-namespace:XamarinUI.AddToShoppingCard" xmlns:converter="clr-namespace:XamarinUI.AddToShoppingCard.Converter"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:behavior="clr-namespace:XamarinUI.AddToShoppingCard.Behavior" xmlns:local="clr-namespace:XamarinUI.AddToShoppingCard" xmlns:converter="clr-namespace:XamarinUI.AddToShoppingCard.Converter" xmlns:controls="clr-namespace:XamarinUI.AddToShoppingCard.Controls"
              mc:Ignorable="d"
              x:Class="XamarinUI.AddToShoppingCard.CurrentShoppingCartView">
 
@@ -21,8 +21,8 @@
 
                 <StackLayout.Padding>
                     <OnPlatform x:TypeArguments="Thickness">
-                        <On Platform="iOS" Value="0,20,0,20" />
-                        <On Platform="Android" Value="0,20,0,10" />
+                        <On Platform="iOS" Value="0,20,0,10" />
+                        <On Platform="Android" Value="0,10,0,10" />
                     </OnPlatform>
                 </StackLayout.Padding>
 
@@ -46,10 +46,8 @@
                         </Image.Source>
                     </Image>
 
-                    <yummy:PancakeView CornerRadius="15" BackgroundColor="{StaticResource accent}" Padding="10,7" VerticalOptions="End">
-                        <Label Text="{Binding CurrentCart.ItensCount}" FontSize="Micro" FontAttributes="Bold" TextColor="{StaticResource primary_text}"/>
-                    </yummy:PancakeView>
-                    
+                    <Label Text="{Binding CurrentCart.ItensCount}" FontAttributes="Bold" TextColor="{StaticResource icons}" VerticalOptions="CenterAndExpand"/>
+
 
                 </StackLayout>
 
@@ -155,33 +153,7 @@
 
                     </StackLayout>
 
-                    <Grid IsVisible="{Binding CurrentCart.Itens, Mode=TwoWay, Converter={StaticResource hasDataConverter}}">
-                        <yummy:PancakeView BackgroundColor="{StaticResource accent}" CornerRadius="30,0,30,30">
-                            <yummy:PancakeView.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
-                            </yummy:PancakeView.GestureRecognizers>
-                            <StackLayout Padding="15" Orientation="Horizontal">
-                                <Label Text="{Binding CurrentCart.TotalPresentation, StringFormat='Proceed to checkout {0}'}" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" FontSize="Body" TextColor="{StaticResource primary_text}" />
-                                <Image VerticalOptions="CenterAndExpand">
-                                    <Image.Source>
-                                        <FontImageSource
-                                                Color="{StaticResource primary_text}"
-                                                FontFamily="{DynamicResource FontAwesomeFontFamily}"
-                                                Size="20"
-                                                Glyph="&#xf054;"
-                                                />
-                                    </Image.Source>
-                                </Image>
-                            </StackLayout>
-                        </yummy:PancakeView>
-
-                        <yummy:PancakeView BackgroundColor="{StaticResource accent}" CornerRadius="30,0,30,30" IsVisible="{Binding CheckOutButtonVisible}">
-                            <StackLayout Padding="15" Orientation="Horizontal">
-                                <Label Text="{Binding CurrentCart.TotalPresentation, StringFormat='Check Out {0}'}" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" FontSize="Body" TextColor="{StaticResource primary_text}" />
-                            </StackLayout>
-                        </yummy:PancakeView>
-
-                    </Grid>
+                    <controls:CustomButton TextButton="{Binding CurrentCart.TotalPresentation, StringFormat='Check Out {0}'}" TapButtonCommand="{Binding NavigateToCheckOutCommand}" />
                 </StackLayout>
             </StackLayout>
         </yummy:PancakeView>

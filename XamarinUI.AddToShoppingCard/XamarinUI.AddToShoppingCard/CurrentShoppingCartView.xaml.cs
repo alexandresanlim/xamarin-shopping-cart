@@ -18,16 +18,5 @@ namespace XamarinUI.AddToShoppingCard
         {
             InitializeComponent();
         }
-
-        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
-        {
-            if (!(CurrentShoppingCartVM.CurrentCart.ItensCount > 0))
-            {
-                App.Current.MainPage.DisplayAlert("Ops!", "The Current Cart does not contains items", "Ok");
-                return;
-            }
-
-            Navigation.PushModalAsync(new CheckOutPage(CurrentShoppingCartVM), true);
-        }
     }
 }

@@ -62,6 +62,17 @@ namespace XamarinUI.AddToShoppingCard
             CurrentCart.ContentVisible = CurrentCart.ItensCount > 0;
         }
 
+        public Command NavigateToCheckOutCommand => new Command(async () =>
+        {
+            if (!(CurrentCart.ItensCount > 0))
+            {
+                await App.Current.MainPage.DisplayAlert("Ops!", "The Current Cart does not contains items", "Ok");
+                return;
+            }
+
+            await App.Current.MainPage.Navigation.PushModalAsync(new CheckOutPage(this), true);
+        });
+
         public Command<Item> AddQuantityCommand => new Command<Item>((item) =>
         {
             item.Quantity++;

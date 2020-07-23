@@ -10,7 +10,7 @@ namespace XamarinUI.AddToShoppingCard.Behavior
     public class TapViewBehavior : Behavior<View>
     {
         public static readonly BindableProperty CommandProperty =
-            BindableProperty.Create(nameof(Command), typeof(Command), typeof(TapViewBehavior));
+            BindableProperty.Create(nameof(Command), typeof(ICommand), typeof(TapViewBehavior));
 
         public static readonly BindableProperty CommandParameterProperty =
             BindableProperty.Create(nameof(CommandParameter), typeof(object), typeof(TapViewBehavior));
@@ -20,9 +20,9 @@ namespace XamarinUI.AddToShoppingCard.Behavior
             Initialize();
         }
 
-        public Command Command
+        public ICommand Command
         {
-            get { return (Command)GetValue(CommandProperty); }
+            get { return (ICommand)GetValue(CommandProperty); }
             set { SetValue(CommandProperty, value); }
         }
 
@@ -64,7 +64,7 @@ namespace XamarinUI.AddToShoppingCard.Behavior
 
             AssociatedObject?.GestureRecognizers?.Add(new TapGestureRecognizer()
             {
-                Command = TransitionCommand,
+                Command = TransitionCommand
             });
         }
 

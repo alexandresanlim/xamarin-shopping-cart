@@ -39,13 +39,13 @@
                     <yummy:PancakeView.Padding>
                         <OnPlatform x:TypeArguments="Thickness">
                             <On Platform="iOS" Value="25,30,25,15" />
-                            <On Platform="Android" Value="25,15" />
+                            <On Platform="Android" Value="30,0,30,20" />
                         </OnPlatform>
                     </yummy:PancakeView.Padding>
 
                     <StackLayout>
 
-                        <yummy:PancakeView Grid.Row="0" BackgroundColor="{StaticResource primary}" CornerRadius="35,0,35,50" Padding="10" Margin="0,20,0,0">
+                        <yummy:PancakeView Grid.Row="0" BackgroundColor="{StaticResource primary}" CornerRadius="40,0,40,50" Padding="15" Margin="0,20,0,0">
                             <yummy:PancakeView.Behaviors>
                                 <behavior:TapViewBehavior/>
                             </yummy:PancakeView.Behaviors>
