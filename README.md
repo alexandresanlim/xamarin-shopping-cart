@@ -6,9 +6,9 @@
 
 ### Android
 
-| - | - | - | - | -
------------- | ------------- | ------ | ---- | ------
-<img width="200" src="https://github.com/alexandresanlim/XamarinUI.AddToShoppingCart/blob/master/XamarinUI.AddToShoppingCard/XamarinUI.AddToShoppingCard/Src/img/screen/android/1.jpg?raw=true"/>| <img width="200" src="https://github.com/alexandresanlim/XamarinUI.AddToShoppingCart/blob/master/XamarinUI.AddToShoppingCard/XamarinUI.AddToShoppingCard/Src/img/screen/android/2.jpg?raw=true"/> | <img width="200" src="https://github.com/alexandresanlim/XamarinUI.AddToShoppingCart/blob/master/XamarinUI.AddToShoppingCard/XamarinUI.AddToShoppingCard/Src/img/screen/android/3.jpg?raw=true"/> | <img width="200" src="https://github.com/alexandresanlim/XamarinUI.AddToShoppingCart/blob/master/XamarinUI.AddToShoppingCard/XamarinUI.AddToShoppingCard/Src/img/screen/android/4.jpg?raw=true"/> | <img width="200" src="https://github.com/alexandresanlim/XamarinUI.AddToShoppingCart/blob/master/XamarinUI.AddToShoppingCard/XamarinUI.AddToShoppingCard/Src/img/screen/android/5.jpg?raw=true"/>
+| - | - | - | - | - | -
+------------ | ------------- | ------ | ---- | ------ | -------- |
+<img width="200" src="https://github.com/alexandresanlim/XamarinUI.AddToShoppingCart/blob/master/XamarinUI.AddToShoppingCard/XamarinUI.AddToShoppingCard/Src/img/screen/android/1.jpg?raw=true"/> | <img width="200" src="https://github.com/alexandresanlim/XamarinUI.AddToShoppingCart/blob/master/XamarinUI.AddToShoppingCard/XamarinUI.AddToShoppingCard/Src/img/screen/android/2.jpg?raw=true"/> | <img width="200" src="https://github.com/alexandresanlim/XamarinUI.AddToShoppingCart/blob/master/XamarinUI.AddToShoppingCard/XamarinUI.AddToShoppingCard/Src/img/screen/android/3.jpg?raw=true"/> | <img width="200" src="https://github.com/alexandresanlim/XamarinUI.AddToShoppingCart/blob/master/XamarinUI.AddToShoppingCard/XamarinUI.AddToShoppingCard/Src/img/screen/android/4.jpg?raw=true"/> | <img width="200" src="https://github.com/alexandresanlim/XamarinUI.AddToShoppingCart/blob/master/XamarinUI.AddToShoppingCard/XamarinUI.AddToShoppingCard/Src/img/screen/android/5.jpg?raw=true"/> | <img width="200" src="https://github.com/alexandresanlim/XamarinUI.AddToShoppingCart/blob/master/XamarinUI.AddToShoppingCard/XamarinUI.AddToShoppingCard/Src/img/screen/android/6.jpg?raw=true"/>
 
 ### iOS With Notch 
 
