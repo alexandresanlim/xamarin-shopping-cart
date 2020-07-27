@@ -15,6 +15,9 @@ namespace XamarinUI.AddToShoppingCard.Controls
 
         public CustomButton()
         {
+            TexButtonValue = new CustomLabel();
+            TapButtonValue = new TapViewBehavior();
+
             Margin = new Thickness(0, 5);
             //BackgroundGradientStartColor = App.Style.SecondaryDarkColor;
             BackgroundColor = App.Style.Accent;

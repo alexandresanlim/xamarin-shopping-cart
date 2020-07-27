@@ -76,15 +76,6 @@
 
                     </pancakeview:PancakeView>
 
-                    <!--<Label Text="Shipping Method" Margin="25,25,0,0" TextColor="{StaticResource secondary_text}" FontSize="Medium" FontAttributes="Bold"/>
-                    <pancakeview:PancakeView BackgroundColor="#20000000" Padding="30,15" CornerRadius="50,0,50,50">
-                        <StackLayout>
-                            <Label Text="Ludwing Von Mises" TextColor="{StaticResource secondary_text}"/>
-                            <Label Text="(99) 9999-9999" TextColor="{StaticResource secondary_text}"/>
-                        </StackLayout>
-
-                    </pancakeview:PancakeView>-->
-
                     <Label Text="Shipping Address" Margin="25,30,0,0" TextColor="{StaticResource secondary_text}" FontSize="Medium" FontAttributes="Bold"/>
                     <pancakeview:PancakeView BackgroundColor="#10000000" Padding="30,15" CornerRadius="25,0,25,25">
                         <StackLayout Orientation="Horizontal">
@@ -129,7 +120,7 @@
                 </StackLayout>
             </ScrollView>
 
-            <controls:CustomButton TextButton="Check out and finish" Grid.Row="2" Margin="10,0,10,5" />
+            <controls:CustomButton TapButtonCommand="{Binding NavigateToFinishCommand}" TextButton="Check out and finish" Grid.Row="2" Margin="10,0,10,5" />
 
         </Grid>
 

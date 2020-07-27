@@ -5,7 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-using XamarinUI.AddToShoppingCard.Controls.Interfaces;
 using XamarinUI.AddToShoppingCard.Extention;
 using XamarinUI.AddToShoppingCard.Models;
 
@@ -18,9 +17,6 @@ namespace XamarinUI.AddToShoppingCard
     {
         public MainPage()
         {
-            var service = DependencyService.Get<IStatusBar>();
-            service?.SetStatusBarColor((Color)App.Current.Resources["primary_dark"]);
-            NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
         }
 

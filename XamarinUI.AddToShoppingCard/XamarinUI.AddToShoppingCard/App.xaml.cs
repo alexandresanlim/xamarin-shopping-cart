@@ -13,11 +13,8 @@ namespace XamarinUI.AddToShoppingCard
 
             MainPage = new NavigationPage(new MainPage())
             {
-                BarBackgroundColor = Color.FromHex("#D32F2F"),
+                BarBackgroundColor = App.Style.Primary,
             };
-
-
-            //MainPage = new ItemDetailPage();
         }
 
         protected override void OnStart()

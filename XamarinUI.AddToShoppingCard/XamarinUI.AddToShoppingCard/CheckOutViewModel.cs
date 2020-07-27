@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
 using XamarinUI.AddToShoppingCard.Models.Base;
 
 namespace XamarinUI.AddToShoppingCard
@@ -16,5 +17,10 @@ namespace XamarinUI.AddToShoppingCard
         {
 
         }
+
+        public Command NavigateToFinishCommand => new Command(async () =>
+        {
+            await NavigateModalAsync(new FinishPage());
+        });
     }
 }

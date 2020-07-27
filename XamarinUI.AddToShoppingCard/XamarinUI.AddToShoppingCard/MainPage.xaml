@@ -9,7 +9,9 @@
              xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:behavior="clr-namespace:XamarinUI.AddToShoppingCard.Behavior"
              BackgroundColor="{StaticResource background_page}"
              xmlns:converter="clr-namespace:XamarinUI.AddToShoppingCard.Converter" xmlns:controls="clr-namespace:XamarinUI.AddToShoppingCard.Controls"
+             NavigationPage.HasNavigationBar="False"
              >
+   
 
     <ContentPage.Resources>
         <ResourceDictionary>
